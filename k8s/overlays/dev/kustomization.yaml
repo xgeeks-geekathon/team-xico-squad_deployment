@@ -1,0 +1,23 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+# commonLabels:
+#   app.xgeeks.org/team: idp_geekathon
+#   backstage.io/kubernetes-id: team-xico-squad
+
+namespace: idpkathon-dev
+# namespace: team-xico-squad-idp_geekathon-dev
+
+resources:
+  - ../../base
+  - ingress.yaml
+
+images:
+  # ATENTION name = image.name NOT name = spec.containers[0].name
+  - name: ghcr.io/xgeeks-geekathon/team-xico-squad
+    newTag: v1
+  - name: ghcr.io/xgeeks-geekathon/team-xico-squad-datafeeder
+    newTag: v1
+# replicas:
+#   - name: team-xico-squad # the deployment name
+#     count: 1
