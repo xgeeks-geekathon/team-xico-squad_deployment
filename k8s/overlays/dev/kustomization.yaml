@@ -9,15 +9,12 @@ namespace: idpkathon-dev
 # namespace: team-xico-squad-idp_geekathon-dev
 
 resources:
-  - ../../base
-  - ingress.yaml
+- ../../base
+- ingress.yaml
 
-images:
   # ATENTION name = image.name NOT name = spec.containers[0].name
-  - name: ghcr.io/xgeeks-geekathon/team-xico-squad
-    newTag: v1
-  - name: ghcr.io/xgeeks-geekathon/team-xico-squad-datafeeder
-    newTag: v1
-# replicas:
-#   - name: team-xico-squad # the deployment name
-#     count: 1
+images:
+- name: ghcr.io/xgeeks-geekathon/team-xico-squad
+  newTag: v1
+- name: ghcr.io/xgeeks-geekathon/team-xico-squad-datafeeder
+  newTag: 017da82
